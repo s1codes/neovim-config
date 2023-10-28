@@ -3,6 +3,13 @@ plugins = {
 		"nvim-telescope/telescope.nvim", tag = '0.1.4',
 		dependencies = { "nvim-lua/plenary.nvim" },
 		lazy = false,
+		opts = {
+			defaults = {
+				file_ignore_patterns = {
+					"node_modules",
+				}
+			}
+		}
 	},
 	{ 
 		"nvim-telescope/telescope-fzf-native.nvim",
