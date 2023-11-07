@@ -13,3 +13,9 @@ Feel free to use this for your own Neovim setup!
  1. JSON (jsonls)
  1. Svelte (svelte)
  1. Lua (lua_ls, OFC!)
+
+## Prerequisites
+
+- Node.js (npm)
+- GCC and CMAKE
+- Go
