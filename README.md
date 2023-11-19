@@ -6,7 +6,7 @@ Feel free to use this for your own Neovim setup!
 - Completion Engine 
 - One Dark Theme
 - Fuzzy Finder (Telescope)
-- LSP Setup for:
+### LSPs:
  1. Go (gopls) 
  1. TypeScript (tsserver)
  1. HTML (html)
@@ -19,3 +19,24 @@ Feel free to use this for your own Neovim setup!
 - Node.js (npm)
 - GCC and CMAKE
 - Go
+
+## Installation
+
+Just clone this Repository code in your ~/.config/nvim folder.
+
+```bash
+git clone https://github.com/s1codes/neovim-config.git ~/.config/nvim
+```
+
+If you have a **Windows** system then try one of these
+
+```bash
+git clone https://github.com/s1codes/neovim-config.git $HOME\AppData\Local\nvim
+
+git clone https://github.com/s1codes/neovim-config.git %LOCALAPPDATA%\nvim 
+
+git clone https://github.com/s1codes/neovim-config.git %USERPROFILE%AppDataLocal\nvim 
+
+git clone https://github.com/s1codes/neovim-config.git C:Users%USERNAME%AppDataLocal\nvim
+```
+(taken from NVChad quickstart guide)
