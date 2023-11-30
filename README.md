@@ -30,13 +30,13 @@ git clone https://github.com/s1codes/neovim-config.git ~/.config/nvim
 
 If you have a **Windows** system then try one of these
 
+
+PowerShell:
 ```bash
-git clone https://github.com/s1codes/neovim-config.git $HOME\AppData\Local\nvim
-
-git clone https://github.com/s1codes/neovim-config.git %LOCALAPPDATA%\nvim 
-
-git clone https://github.com/s1codes/neovim-config.git %USERPROFILE%AppDataLocal\nvim 
-
-git clone https://github.com/s1codes/neovim-config.git C:Users%USERNAME%AppDataLocal\nvim
+git clone https://github.com/s1codes/neovim-config.git $HOME\AppData\Local\nvim 
 ```
-(taken from NVChad quickstart guide)
+
+Command Prompt
+```bash
+git clone https://github.com/s1codes/neovim-config.git %LOCALAPPDATA%\nvim
+```
