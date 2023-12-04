@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "gopls", "tsserver", "html", "jsonls", "svelte" },
+	ensure_installed = { "lua_ls", "gopls", "tsserver", "html", "jsonls", "svelte", "rust_analyzer" },
 })
 require("language-server.cmp")
 
@@ -91,4 +91,19 @@ lspconfig.svelte.setup {
   cmd = { "svelteserver", "--stdio" },
   filetypes = { "svelte" },
   root_dir = util.root_pattern("package.json", ".git")
+}
+
+lspconfig.rust_analyzer.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "rust-analyzer" },
+  filetypes = { "rust" },
+  root_dir = util.root_pattern("Cargo.toml", "rust-project.json")
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
 }
