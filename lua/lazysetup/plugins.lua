@@ -1,19 +1,31 @@
 local plugins = {
-	{"williamboman/mason.nvim"},
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup({
+				PATH = "append",      -- ensure Mason's bin directory is in PATH
+			})
+		end,
+	},
 	{"williamboman/mason-lspconfig.nvim"},
 	{"neovim/nvim-lspconfig"},
-	{"hrsh7th/cmp-nvim-lsp"},
-	{"hrsh7th/nvim-cmp"},
-	{"L3MON4D3/LuaSnip"},
-	{"saadparwaiz1/cmp_luasnip"},
+	{
+		"saghen/blink.cmp",
+		lazy = false,
+		dependencies = { "saghen/blink.lib" },
+		build = function()
+			require("blink.cmp").build():pwait()
+		end,
+		opts = require("language-server.blink"),
+	},
 	{"nvim-tree/nvim-web-devicons"},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
 		build = ":TSUpdate",
 		config = function ()
-			local configs = require("nvim-treesitter.configs")
-			configs.setup({
-				ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "html", "go", "svelte", "json", "jsdoc", "typescript" },
+			require("nvim-treesitter").setup({
+				ensure_installed = { "c", "lua", "vim", "javascript", "html", "go", "rust", "svelte", "json", "jsdoc", "typescript", "tsx" },
 				sync_install = false,
 				highlight = { enable = true },
 				indent = { enable = true },
@@ -21,7 +33,7 @@ local plugins = {
 		end
 	},
 	{
-		"nvim-telescope/telescope.nvim", tag = '0.1.4',
+		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		lazy = false,
 		opts = {
@@ -45,7 +57,9 @@ local plugins = {
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		opts = {}
+		config = function ()
+			require("nvim-autopairs").setup {}
+		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim",
@@ -53,7 +67,6 @@ local plugins = {
 			require('lualine').setup {
 				options = {
 					section_separators = { left = '', right = '' },
-					-- component_separators = { left = '', right = '' },
 					component_separators = { left = ')', right = '(' },
 					theme = 'onedark',
 					icons_enabled = true,
@@ -83,12 +96,8 @@ local plugins = {
 		end
 	},
 	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		config = function ()
-			require("nvim-tree").setup {}
-		end
+		"stevearc/oil.nvim",
+		opts = {},
 	},
 }
 return plugins

@@ -12,6 +12,6 @@ vim.keymap.set('n', '<c-j>', ':wincmd j<CR>', { silent = true })
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', { silent = true })
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>', { silent = true })
 
--- NvimTree
+-- Oil.nvim
 
-vim.keymap.set('n', '<leader>tr', vim.cmd.NvimTreeToggle)
+vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Open oil.nvim' })
