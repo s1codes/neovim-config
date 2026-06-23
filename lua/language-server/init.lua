@@ -35,6 +35,14 @@ local servers = {
 			}
 		}
 	},
+	jsonls = {
+		settings = {
+          json = {
+            validate = { enable = true },
+          },
+        },
+        filetypes = { "json", "jsonc" },
+	}
 }
 
 local handler = function(server_name)
@@ -52,6 +60,6 @@ local handler = function(server_name)
 end
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "biome", "tailwindcss", "rust_analyzer", "gopls" },
+	ensure_installed = { "lua_ls", "clangd", "biome", "tailwindcss", "jsonls", "rust_analyzer", "gopls" },
 	handlers = { handler },
 })
