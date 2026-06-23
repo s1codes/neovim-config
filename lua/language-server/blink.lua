@@ -1,6 +1,6 @@
 return {
   keymap = {
-    preset = "default",
+    preset = "super-tab",
   },
   appearance = {
     -- defaults
