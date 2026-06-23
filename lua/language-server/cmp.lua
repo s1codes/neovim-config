@@ -1,2 +1,0 @@
--- This file is no longer needed; blink.cmp is used instead.
--- Keep for reference or remove it.
