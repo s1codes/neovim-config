@@ -15,3 +15,7 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>', { silent = true })
 -- Oil.nvim
 
 vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Open oil.nvim' })
+
+-- Diagnostics
+
+vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
