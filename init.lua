@@ -10,6 +10,15 @@ vim.wo.number = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.showmode = false
+vim.diagnostic.config({
+  float = {
+    border = "rounded",
+    focusable = false,
+    header = "",
+    prefix = " ",
+    source = "always",
+  },
+})
 
 -- Imports
 
