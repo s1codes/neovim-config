@@ -1,4 +1,11 @@
 local plugins = {
+	{"williamboman/mason-lspconfig.nvim"},
+	{"neovim/nvim-lspconfig"},
+	{"nvim-tree/nvim-web-devicons"},
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+	},
 	{
 		"williamboman/mason.nvim",
 		config = function()
@@ -7,8 +14,6 @@ local plugins = {
 			})
 		end,
 	},
-	{"williamboman/mason-lspconfig.nvim"},
-	{"neovim/nvim-lspconfig"},
 	{
 		"saghen/blink.cmp",
 		lazy = false,
@@ -18,7 +23,6 @@ local plugins = {
 		end,
 		opts = require("language-server.blink"),
 	},
-	{"nvim-tree/nvim-web-devicons"},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
@@ -94,10 +98,6 @@ local plugins = {
 				},
 			}
 		end
-	},
-	{
-		"stevearc/oil.nvim",
-		opts = {},
 	},
 }
 return plugins
